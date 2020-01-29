@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
   <div class="container">
     <div class="row">
 
-      <div class="col-md-5">
+      <div class="col-md-5 py-5">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 
           <?php echo $account->getError(Constants::$usernameCharacters); ?>

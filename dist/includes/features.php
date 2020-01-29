@@ -1,4 +1,4 @@
-<div class="col-md-7 px-5">
+<div class="col-md-7 p-5">
   <div class="features">
     <h1>Listen to great music, right now.</h1>
     <p class="lead">Listen to loads of songs for free.</p>
