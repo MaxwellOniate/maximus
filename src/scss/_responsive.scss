@@ -1,0 +1,57 @@
+@media (max-width: 1000px) {
+  .main-form {
+    .container {
+      .features {
+        h1 {
+          font-size: 3rem;
+        }
+        .lead {
+          font-size: 1.4rem;
+        }
+        ul li {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .main-form {
+    .container {
+      .features {
+        h1 {
+          font-size: 2rem;
+        }
+        .lead {
+          font-size: 1.2rem;
+        }
+        ul li {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .main-form {
+    .container {
+      .features {
+        h1 {
+          font-size: 1.7rem;
+        }
+        .lead {
+          font-size: 0.95rem;
+        }
+        ul li {
+          font-size: 0.7rem;
+          i {
+            font-size: 1.4rem;
+            padding-right: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}

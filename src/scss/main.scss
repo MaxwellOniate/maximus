@@ -1,0 +1,95 @@
+@import 'responsive';
+
+$primary-color: #07d159;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+
+.main-form {
+  display: flex;
+  align-items: center;
+  background: url('../img/bg.jpg') no-repeat center center/cover;
+  outline: none;
+  min-height: 100vh;
+  color: #fff;
+  @-webkit-keyframes autofill {
+    0%,
+    100% {
+      color: #fff;
+      background: transparent;
+    }
+  }
+  input:-webkit-autofill {
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+  .form-control {
+    color: #fff;
+    border-radius: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #fff;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #fff;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #fff;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .btn {
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  p {
+    a {
+      color: $primary-color;
+    }
+  }
+  .features {
+    h1 {
+      color: $primary-color;
+      font-size: 3.8rem;
+      font-weight: bold;
+    }
+    .lead {
+      font-size: 1.6rem;
+    }
+    ul {
+      padding: 0;
+      li {
+        font-size: 20px;
+        list-style-type: none;
+
+        i {
+          color: $primary-color;
+          font-size: 2rem;
+          padding-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.errorMessage {
+  color: #ff0000;
+}

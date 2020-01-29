@@ -1,0 +1,95 @@
+@media (max-width: 1000px) {
+  .main-form .container .features h1 {
+    font-size: 3rem; }
+  .main-form .container .features .lead {
+    font-size: 1.4rem; }
+  .main-form .container .features ul li {
+    font-size: 1rem; } }
+
+@media (max-width: 420px) {
+  .main-form .container .features h1 {
+    font-size: 2rem; }
+  .main-form .container .features .lead {
+    font-size: 1.2rem; }
+  .main-form .container .features ul li {
+    font-size: 0.85rem; } }
+
+@media (max-width: 360px) {
+  .main-form .container .features h1 {
+    font-size: 1.7rem; }
+  .main-form .container .features .lead {
+    font-size: 0.95rem; }
+  .main-form .container .features ul li {
+    font-size: 0.7rem; }
+    .main-form .container .features ul li i {
+      font-size: 1.4rem;
+      padding-right: 0.3rem; } }
+
+body {
+  font-family: Arial, Helvetica, sans-serif; }
+
+.form-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #ccc;
+  background: #fff; }
+
+.main-form {
+  display: flex;
+  align-items: center;
+  background: url("../img/bg.jpg") no-repeat center center/cover;
+  outline: none;
+  min-height: 100vh;
+  color: #fff; }
+
+@-webkit-keyframes autofill {
+  0%,
+  100% {
+    color: #fff;
+    background: transparent; } }
+  .main-form input:-webkit-autofill {
+    -webkit-animation-delay: 1s;
+    /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both; }
+  .main-form .form-control {
+    color: #fff;
+    border-radius: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff; }
+    .main-form .form-control::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #fff;
+      opacity: 1;
+      /* Firefox */ }
+    .main-form .form-control:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #fff; }
+    .main-form .form-control::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #fff; }
+    .main-form .form-control:focus {
+      outline: none; }
+  .main-form .btn {
+    border-radius: 20px;
+    text-transform: uppercase; }
+  .main-form p a {
+    color: #07d159; }
+  .main-form .features h1 {
+    color: #07d159;
+    font-size: 3.8rem;
+    font-weight: bold; }
+  .main-form .features .lead {
+    font-size: 1.6rem; }
+  .main-form .features ul {
+    padding: 0; }
+    .main-form .features ul li {
+      font-size: 20px;
+      list-style-type: none; }
+      .main-form .features ul li i {
+        color: #07d159;
+        font-size: 2rem;
+        padding-right: 0.5rem; }
+
+.errorMessage {
+  color: #ff0000; }
