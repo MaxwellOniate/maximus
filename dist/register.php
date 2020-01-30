@@ -1,7 +1,5 @@
 <?php
 
-$pageTitle = 'Register';
-
 require('includes/config.php');
 require('includes/classes/FormSanitizer.php');
 require('includes/classes/Account.php');
@@ -31,74 +29,92 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<?php require('includes/header.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="main-form">
-  <div class="container">
-    <div class="row">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maximus | Register</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
-      <div class="col-md-5 py-5">
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+<body>
+  <section class="main-form">
+    <div class="container">
+      <div class="row">
 
-          <?php echo $account->getError(Constants::$usernameCharacters); ?>
-          <?php echo $account->getError(Constants::$usernameTaken); ?>
-          <div class="form-group">
-            <input type="text" name="username" class="form-control" placeholder="Username" value="<?php $account->getInputValue('username'); ?>" required>
-          </div>
+        <div class="col-md-5 py-5">
+          <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 
-          <?php echo $account->getError(Constants::$firstNameCharacters); ?>
-          <div class="form-group">
-            <input type="text" name="firstName" class="form-control" placeholder="First Name" value="<?php $account->getInputValue('firstName'); ?>" required>
-          </div>
+            <?php echo $account->getError(Constants::$usernameCharacters); ?>
+            <?php echo $account->getError(Constants::$usernameTaken); ?>
+            <div class="form-group">
+              <input type="text" name="username" class="form-control" placeholder="Username" value="<?php $account->getInputValue('username'); ?>" required>
+            </div>
+
+            <?php echo $account->getError(Constants::$firstNameCharacters); ?>
+            <div class="form-group">
+              <input type="text" name="firstName" class="form-control" placeholder="First Name" value="<?php $account->getInputValue('firstName'); ?>" required>
+            </div>
 
 
-          <?php echo $account->getError(Constants::$lastNameCharacters); ?>
-          <div class="form-group">
-            <input type="text" name="lastName" class="form-control" placeholder="Last Name" value="<?php $account->getInputValue('lastName'); ?>" required>
-          </div>
+            <?php echo $account->getError(Constants::$lastNameCharacters); ?>
+            <div class="form-group">
+              <input type="text" name="lastName" class="form-control" placeholder="Last Name" value="<?php $account->getInputValue('lastName'); ?>" required>
+            </div>
 
-          <?php echo $account->getError(Constants::$emailsDontMatch); ?>
-          <?php echo $account->getError(Constants::$emailInvalid); ?>
-          <?php echo $account->getError(Constants::$emailTaken); ?>
-          <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Email" value="<?php $account->getInputValue('email'); ?>" required>
-          </div>
+            <?php echo $account->getError(Constants::$emailsDontMatch); ?>
+            <?php echo $account->getError(Constants::$emailInvalid); ?>
+            <?php echo $account->getError(Constants::$emailTaken); ?>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Email" value="<?php $account->getInputValue('email'); ?>" required>
+            </div>
 
-          <div class="form-group">
-            <input type="email" name="email2" class="form-control" placeholder="Confirm Email" value="<?php $account->getInputValue('email2'); ?>" required>
-          </div>
+            <div class="form-group">
+              <input type="email" name="email2" class="form-control" placeholder="Confirm Email" value="<?php $account->getInputValue('email2'); ?>" required>
+            </div>
 
-          <?php echo $account->getError(Constants::$passwordsDontMatch); ?>
-          <?php echo $account->getError(Constants::$passwordLength); ?>
-          <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Password" required>
-          </div>
+            <?php echo $account->getError(Constants::$passwordsDontMatch); ?>
+            <?php echo $account->getError(Constants::$passwordLength); ?>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
 
-          <div class="form-group">
-            <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
-          </div>
+            <div class="form-group">
+              <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
+            </div>
 
-          <button type="submit" name="submit" class="btn btn-success btn-block">Sign Up</button>
-        </form>
-        <small>
-          By clicking on Sign up, you agree to Maximus's Terms and Conditions of Use.
-        </small>
-        <small>
-          To learn more about how Maximus collects, uses, shares and protects your personal data please read Maximus's Privacy Policy.
-        </small>
-        <hr>
-        <p>Already have an account? <a href="login.php">Log In.</a></p>
+            <button type="submit" name="submit" class="btn btn-success btn-block">Sign Up</button>
+          </form>
+          <small>
+            By clicking on Sign up, you agree to Maximus's Terms and Conditions of Use.
+          </small>
+          <small>
+            To learn more about how Maximus collects, uses, shares and protects your personal data please read Maximus's Privacy Policy.
+          </small>
+          <hr>
+          <p>Already have an account? <a href="login.php">Log In.</a></p>
+
+        </div>
+
+        <?php include('includes/features.php'); ?>
 
       </div>
 
-      <?php include('includes/features.php'); ?>
 
     </div>
 
+  </section>
+  <script src="https://kit.fontawesome.com/52d1564875.js" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/script.js"></script>
 
-  </div>
 
-</section>
+</body>
 
-
-<?php require('includes/footer.php'); ?>
+</html>

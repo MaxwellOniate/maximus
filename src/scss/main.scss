@@ -4,6 +4,10 @@ $primary-color: #07d159;
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: #181818;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
 .form-header {
@@ -151,14 +155,51 @@ body {
         }
       }
     }
+    #main-view-container {
+      margin-left: 220px;
+      padding-bottom: 108px;
+      width: calc(100% - 220px);
+      #main-content {
+        padding: 1rem;
+        .page-heading {
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+        .albums {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          .album {
+            margin: 1rem;
+            height: 200px;
+            width: 200px;
+            a {
+              color: #fff;
+              text-decoration: none;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+            .album-info {
+              font-weight: 300;
+              text-align: center;
+              padding: 5px 0;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
   }
 
   #play-bar-container {
     width: 100%;
     background: #282828;
     .play-bar {
+      padding: 0.5rem;
       color: #a0a0a0;
-      padding: 1rem;
       .control-btn {
         font-size: 1.5rem;
         color: #a0a0a0;

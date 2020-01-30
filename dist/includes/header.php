@@ -1,3 +1,15 @@
+<?php
+
+require('includes/config.php');
+
+if (!isset($_SESSION["userLoggedIn"])) {
+  header("Location: login.php");
+}
+
+$userLoggedIn = $_SESSION["userLoggedIn"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,3 +23,12 @@
 </head>
 
 <body>
+
+  <section id="main">
+
+    <div class="top-container">
+
+      <?php include("includes/sideNav.php"); ?>
+
+      <div id="main-view-container">
+        <div id="main-content">

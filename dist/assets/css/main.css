@@ -26,7 +26,11 @@
       padding-right: 0.3rem; } }
 
 body {
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+  background: #181818;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 1px; }
 
 .form-header {
   padding: 1.5rem;
@@ -137,13 +141,42 @@ body {
       padding: 10px 0; }
       #main .top-container #navbar ul li a {
         font-weight: 700; }
+  #main .top-container #main-view-container {
+    margin-left: 220px;
+    padding-bottom: 108px;
+    width: calc(100% - 220px); }
+    #main .top-container #main-view-container #main-content {
+      padding: 1rem; }
+      #main .top-container #main-view-container #main-content .page-heading {
+        text-align: center;
+        margin-bottom: 1.5rem; }
+      #main .top-container #main-view-container #main-content .albums {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; }
+        #main .top-container #main-view-container #main-content .albums .album {
+          margin: 1rem;
+          height: 200px;
+          width: 200px; }
+          #main .top-container #main-view-container #main-content .albums .album a {
+            color: #fff;
+            text-decoration: none; }
+            #main .top-container #main-view-container #main-content .albums .album a:hover {
+              text-decoration: none; }
+          #main .top-container #main-view-container #main-content .albums .album .album-info {
+            font-weight: 300;
+            text-align: center;
+            padding: 5px 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap; }
 
 #main #play-bar-container {
   width: 100%;
   background: #282828; }
   #main #play-bar-container .play-bar {
-    color: #a0a0a0;
-    padding: 1rem; }
+    padding: 0.5rem;
+    color: #a0a0a0; }
     #main #play-bar-container .play-bar .control-btn {
       font-size: 1.5rem;
       color: #a0a0a0;
