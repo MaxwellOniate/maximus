@@ -93,3 +93,102 @@ body {
 .errorMessage {
   color: #ff0000;
 }
+
+.top-container {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+#play-bar-container {
+  width: 100%;
+  background: #282828;
+  .play-bar {
+    color: #a0a0a0;
+    padding: 1rem;
+    .control-btn {
+      font-size: 1.5rem;
+      color: #a0a0a0;
+      border: none;
+      background: none;
+      outline: none;
+      &:hover {
+        color: #fff;
+      }
+    }
+    .bar {
+      display: flex;
+      align-items: center;
+      margin: 0 1rem;
+      width: 100%;
+      height: 12px;
+      display: inline-flex;
+      cursor: pointer;
+      .bar-bg {
+        background: #404040;
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        .bar-progress {
+          background: #a0a0a0;
+          width: 0;
+          height: 4px;
+          border-radius: 2px;
+        }
+      }
+    }
+    .album {
+      padding: 1rem 0;
+      color: #fff;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .album-art {
+        height: 60px;
+        width: 60px;
+        object-fit: cover;
+        margin-right: 1rem;
+      }
+      .track-info {
+        .artist-name {
+          font-size: 12px;
+          color: #a0a0a0;
+        }
+      }
+    }
+    .player-controls {
+      padding: 0 1rem;
+      .buttons {
+        display: flex;
+        justify-content: center;
+        .play,
+        .pause {
+          font-size: 2.5rem;
+        }
+      }
+      .playback-bar {
+        display: flex;
+        .progress-time {
+          font-size: 11px;
+          text-align: center;
+        }
+      }
+    }
+    .volume {
+      padding: 1rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .volume-btn {
+        font-size: 1rem;
+        padding: 0;
+      }
+      .bar {
+        padding-right: 1.3rem;
+        .bar-bg {
+          .bar-progress {
+          }
+        }
+      }
+    }
+  }
+}

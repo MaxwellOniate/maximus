@@ -93,3 +93,77 @@ body {
 
 .errorMessage {
   color: #ff0000; }
+
+.top-container {
+  min-height: 100%;
+  min-width: 100%; }
+
+#play-bar-container {
+  width: 100%;
+  background: #282828; }
+  #play-bar-container .play-bar {
+    color: #a0a0a0;
+    padding: 1rem; }
+    #play-bar-container .play-bar .control-btn {
+      font-size: 1.5rem;
+      color: #a0a0a0;
+      border: none;
+      background: none;
+      outline: none; }
+      #play-bar-container .play-bar .control-btn:hover {
+        color: #fff; }
+    #play-bar-container .play-bar .bar {
+      display: flex;
+      align-items: center;
+      margin: 0 1rem;
+      width: 100%;
+      height: 12px;
+      display: inline-flex;
+      cursor: pointer; }
+      #play-bar-container .play-bar .bar .bar-bg {
+        background: #404040;
+        height: 4px;
+        width: 100%;
+        border-radius: 2px; }
+        #play-bar-container .play-bar .bar .bar-bg .bar-progress {
+          background: #a0a0a0;
+          width: 0;
+          height: 4px;
+          border-radius: 2px; }
+    #play-bar-container .play-bar .album {
+      padding: 1rem 0;
+      color: #fff;
+      height: 100%;
+      display: flex;
+      align-items: center; }
+      #play-bar-container .play-bar .album .album-art {
+        height: 60px;
+        width: 60px;
+        object-fit: cover;
+        margin-right: 1rem; }
+      #play-bar-container .play-bar .album .track-info .artist-name {
+        font-size: 12px;
+        color: #a0a0a0; }
+    #play-bar-container .play-bar .player-controls {
+      padding: 0 1rem; }
+      #play-bar-container .play-bar .player-controls .buttons {
+        display: flex;
+        justify-content: center; }
+        #play-bar-container .play-bar .player-controls .buttons .play,
+        #play-bar-container .play-bar .player-controls .buttons .pause {
+          font-size: 2.5rem; }
+      #play-bar-container .play-bar .player-controls .playback-bar {
+        display: flex; }
+        #play-bar-container .play-bar .player-controls .playback-bar .progress-time {
+          font-size: 11px;
+          text-align: center; }
+    #play-bar-container .play-bar .volume {
+      padding: 1rem;
+      height: 100%;
+      display: flex;
+      align-items: center; }
+      #play-bar-container .play-bar .volume .volume-btn {
+        font-size: 1rem;
+        padding: 0; }
+      #play-bar-container .play-bar .volume .bar {
+        padding-right: 1.3rem; }
