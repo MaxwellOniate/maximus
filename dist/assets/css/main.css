@@ -94,25 +94,66 @@ body {
 .errorMessage {
   color: #ff0000; }
 
-.top-container {
+#main .top-container {
   min-height: 100%;
   min-width: 100%; }
+  #main .top-container #navbar {
+    padding: 1rem;
+    background: #000;
+    width: 220px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px; }
+    #main .top-container #navbar a {
+      color: #a0a0a0;
+      transition: all 200ms linear; }
+      #main .top-container #navbar a:hover {
+        text-decoration: none;
+        color: #fff; }
+    #main .top-container #navbar .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 2rem 0; }
+      #main .top-container #navbar .logo i {
+        transition: all 200ms linear; }
+      #main .top-container #navbar .logo:hover i {
+        color: #07d159; }
+    #main .top-container #navbar .search {
+      border-top: 1px solid #a0a0a0;
+      border-bottom: 1px solid #a0a0a0;
+      margin: 1rem 0;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700; }
+      #main .top-container #navbar .search:hover {
+        border-color: #fff; }
+        #main .top-container #navbar .search:hover a {
+          color: #fff; }
+    #main .top-container #navbar ul li {
+      list-style: none;
+      padding: 10px 0; }
+      #main .top-container #navbar ul li a {
+        font-weight: 700; }
 
-#play-bar-container {
+#main #play-bar-container {
   width: 100%;
   background: #282828; }
-  #play-bar-container .play-bar {
+  #main #play-bar-container .play-bar {
     color: #a0a0a0;
     padding: 1rem; }
-    #play-bar-container .play-bar .control-btn {
+    #main #play-bar-container .play-bar .control-btn {
       font-size: 1.5rem;
       color: #a0a0a0;
       border: none;
       background: none;
-      outline: none; }
-      #play-bar-container .play-bar .control-btn:hover {
+      outline: none;
+      transition: all 200ms linear; }
+      #main #play-bar-container .play-bar .control-btn:hover {
         color: #fff; }
-    #play-bar-container .play-bar .bar {
+    #main #play-bar-container .play-bar .bar {
       display: flex;
       align-items: center;
       margin: 0 1rem;
@@ -120,50 +161,50 @@ body {
       height: 12px;
       display: inline-flex;
       cursor: pointer; }
-      #play-bar-container .play-bar .bar .bar-bg {
+      #main #play-bar-container .play-bar .bar .bar-bg {
         background: #404040;
         height: 4px;
         width: 100%;
         border-radius: 2px; }
-        #play-bar-container .play-bar .bar .bar-bg .bar-progress {
+        #main #play-bar-container .play-bar .bar .bar-bg .bar-progress {
           background: #a0a0a0;
           width: 0;
           height: 4px;
           border-radius: 2px; }
-    #play-bar-container .play-bar .album {
+    #main #play-bar-container .play-bar .album {
       padding: 1rem 0;
       color: #fff;
       height: 100%;
       display: flex;
       align-items: center; }
-      #play-bar-container .play-bar .album .album-art {
+      #main #play-bar-container .play-bar .album .album-art {
         height: 60px;
         width: 60px;
         object-fit: cover;
         margin-right: 1rem; }
-      #play-bar-container .play-bar .album .track-info .artist-name {
+      #main #play-bar-container .play-bar .album .track-info .artist-name {
         font-size: 12px;
         color: #a0a0a0; }
-    #play-bar-container .play-bar .player-controls {
+    #main #play-bar-container .play-bar .player-controls {
       padding: 0 1rem; }
-      #play-bar-container .play-bar .player-controls .buttons {
+      #main #play-bar-container .play-bar .player-controls .buttons {
         display: flex;
         justify-content: center; }
-        #play-bar-container .play-bar .player-controls .buttons .play,
-        #play-bar-container .play-bar .player-controls .buttons .pause {
+        #main #play-bar-container .play-bar .player-controls .buttons .play,
+        #main #play-bar-container .play-bar .player-controls .buttons .pause {
           font-size: 2.5rem; }
-      #play-bar-container .play-bar .player-controls .playback-bar {
+      #main #play-bar-container .play-bar .player-controls .playback-bar {
         display: flex; }
-        #play-bar-container .play-bar .player-controls .playback-bar .progress-time {
+        #main #play-bar-container .play-bar .player-controls .playback-bar .progress-time {
           font-size: 11px;
           text-align: center; }
-    #play-bar-container .play-bar .volume {
+    #main #play-bar-container .play-bar .volume {
       padding: 1rem;
       height: 100%;
       display: flex;
       align-items: center; }
-      #play-bar-container .play-bar .volume .volume-btn {
+      #main #play-bar-container .play-bar .volume .volume-btn {
         font-size: 1rem;
         padding: 0; }
-      #play-bar-container .play-bar .volume .bar {
+      #main #play-bar-container .play-bar .volume .bar {
         padding-right: 1.3rem; }
