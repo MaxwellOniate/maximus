@@ -43,18 +43,18 @@ body {
     border-bottom: 1px solid #fff;
     &::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #fff;
+      color: #ccc;
       opacity: 1; /* Firefox */
     }
 
     &:-ms-input-placeholder {
       /* Internet Explorer 10-11 */
-      color: #fff;
+      color: #ccc;
     }
 
     &::-ms-input-placeholder {
       /* Microsoft Edge */
-      color: #fff;
+      color: #ccc;
     }
     &:focus {
       outline: none;
@@ -187,6 +187,77 @@ body {
               text-overflow: ellipsis;
               overflow: hidden;
               white-space: nowrap;
+            }
+          }
+        }
+        .entity {
+          img {
+            margin: 2rem 2rem 2rem 0;
+          }
+          .entity-info {
+            display: inline-block;
+            p {
+              color: #939393;
+              font-weight: 200;
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+        .track-list-container {
+          .track-list {
+            padding: 0;
+            .track-list-row {
+              &:hover {
+                background: #282828;
+                .track-count {
+                  i {
+                    display: block;
+                  }
+                  .track-number {
+                    display: none;
+                  }
+                }
+                .track-options {
+                  display: block;
+                }
+              }
+              span {
+                color: #939393;
+                font-weight: 200;
+              }
+              padding: 15px 10px;
+              list-style: none;
+              display: flex;
+              justify-content: space-between;
+              .left-section,
+              .right-section {
+                display: flex;
+                align-items: center;
+              }
+              .track-count {
+                padding: 0.5rem;
+                i {
+                  display: none;
+                  cursor: pointer;
+                }
+              }
+              .track-info {
+                margin: 0 2rem;
+                .track-name {
+                  color: #fff;
+                }
+                span {
+                  display: block;
+                }
+              }
+              .track-options {
+                display: none;
+                cursor: pointer;
+              }
+              .track-options,
+              .track-duration {
+                margin: 0 2rem;
+              }
             }
           }
         }

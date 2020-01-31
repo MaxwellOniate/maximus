@@ -18,8 +18,8 @@ require('includes/header.php');
     echo "
 
       <div class='album'>
-        <a href='album.php?id='" . $row['id'] . "'>
-          <img src='" . $row['artworkPath'] . " ' alt='" . $row['title'] . " ' class='img-fluid'>
+        <a href='album.php?id=" . $row['id'] . "'>
+          <img src='" . $row['artworkPath'] . " ' alt='" . $row['title'] . "' class='img-fluid'>
 
           <div class='album-info'>" . $row['title'] . "</div>
         </a>

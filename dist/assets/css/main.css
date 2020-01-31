@@ -63,15 +63,15 @@ body {
     border-bottom: 1px solid #fff; }
     .main-form .form-control::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #fff;
+      color: #ccc;
       opacity: 1;
       /* Firefox */ }
     .main-form .form-control:-ms-input-placeholder {
       /* Internet Explorer 10-11 */
-      color: #fff; }
+      color: #ccc; }
     .main-form .form-control::-ms-input-placeholder {
       /* Microsoft Edge */
-      color: #fff; }
+      color: #ccc; }
     .main-form .form-control:focus {
       outline: none; }
   .main-form .btn {
@@ -170,6 +170,53 @@ body {
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap; }
+      #main .top-container #main-view-container #main-content .entity img {
+        margin: 2rem 2rem 2rem 0; }
+      #main .top-container #main-view-container #main-content .entity .entity-info {
+        display: inline-block; }
+        #main .top-container #main-view-container #main-content .entity .entity-info p {
+          color: #939393;
+          font-weight: 200;
+          margin-bottom: 0.5rem; }
+      #main .top-container #main-view-container #main-content .track-list-container .track-list {
+        padding: 0; }
+        #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row {
+          padding: 15px 10px;
+          list-style: none;
+          display: flex;
+          justify-content: space-between; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row:hover {
+            background: #282828; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row:hover .track-count i {
+              display: block; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row:hover .track-count .track-number {
+              display: none; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row:hover .track-options {
+              display: block; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row span {
+            color: #939393;
+            font-weight: 200; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .left-section,
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .right-section {
+            display: flex;
+            align-items: center; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-count {
+            padding: 0.5rem; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-count i {
+              display: none;
+              cursor: pointer; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-info {
+            margin: 0 2rem; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-info .track-name {
+              color: #fff; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-info span {
+              display: block; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options {
+            display: none;
+            cursor: pointer; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options,
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-duration {
+            margin: 0 2rem; }
 
 #main #play-bar-container {
   width: 100%;

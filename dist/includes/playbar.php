@@ -13,7 +13,7 @@
               <span>Livin' Prince</span>
             </span>
             <span class="artist-name d-block">
-              <span>M. Prince</span>
+              <span>Mr. Prince</span>
             </span>
           </div>
 

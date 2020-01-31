@@ -1,6 +1,9 @@
 <?php
 
 require('includes/config.php');
+require('includes/classes/Artist.php');
+require('includes/classes/Album.php');
+require('includes/classes/Song.php');
 
 if (!isset($_SESSION["userLoggedIn"])) {
   header("Location: login.php");
