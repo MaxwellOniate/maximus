@@ -115,14 +115,12 @@ body {
       transition: all 200ms linear; }
       #main .top-container #navbar a:hover {
         text-decoration: none;
-        color: #fff; }
+        color: #07d159; }
     #main .top-container #navbar .logo {
       color: #fff;
       font-size: 1.5rem;
       padding: 2rem 0; }
       #main .top-container #navbar .logo i {
-        transition: all 200ms linear; }
-      #main .top-container #navbar .logo:hover i {
         color: #07d159; }
     #main .top-container #navbar .search {
       border-top: 1px solid #a0a0a0;
@@ -133,9 +131,9 @@ body {
       justify-content: space-between;
       font-weight: 700; }
       #main .top-container #navbar .search:hover {
-        border-color: #fff; }
+        border-color: #07d159; }
         #main .top-container #navbar .search:hover a {
-          color: #fff; }
+          color: #07d159; }
     #main .top-container #navbar ul li {
       list-style: none;
       padding: 10px 0; }
@@ -224,6 +222,10 @@ body {
   #main #play-bar-container .play-bar {
     padding: 0.5rem;
     color: #a0a0a0; }
+    #main #play-bar-container .play-bar .control-btn.active {
+      color: #07d159; }
+      #main #play-bar-container .play-bar .control-btn.active:hover {
+        color: #07d159; }
     #main #play-bar-container .play-bar .control-btn {
       font-size: 1.5rem;
       color: #a0a0a0;
@@ -252,7 +254,7 @@ body {
           height: 4px;
           border-radius: 2px; }
     #main #play-bar-container .play-bar .album {
-      padding: 1rem 0;
+      padding: 1rem;
       color: #fff;
       height: 100%;
       display: flex;
@@ -284,7 +286,5 @@ body {
       display: flex;
       align-items: center; }
       #main #play-bar-container .play-bar .volume .volume-btn {
-        font-size: 1rem;
-        padding: 0; }
-      #main #play-bar-container .play-bar .volume .bar {
-        padding-right: 1.3rem; }
+        width: 1rem;
+        font-size: 1rem; }

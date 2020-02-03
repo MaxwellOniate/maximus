@@ -116,7 +116,7 @@ body {
         transition: all 200ms linear;
         &:hover {
           text-decoration: none;
-          color: #fff;
+          color: $primary-color;
         }
       }
       .logo {
@@ -124,12 +124,7 @@ body {
         font-size: 1.5rem;
         padding: 2rem 0;
         i {
-          transition: all 200ms linear;
-        }
-        &:hover {
-          i {
-            color: $primary-color;
-          }
+          color: $primary-color;
         }
       }
       .search {
@@ -141,9 +136,9 @@ body {
         justify-content: space-between;
         font-weight: 700;
         &:hover {
-          border-color: #fff;
+          border-color: $primary-color;
           a {
-            color: #fff;
+            color: $primary-color;
           }
         }
       }
@@ -271,6 +266,12 @@ body {
     .play-bar {
       padding: 0.5rem;
       color: #a0a0a0;
+      .control-btn.active {
+        color: $primary-color;
+        &:hover {
+          color: $primary-color;
+        }
+      }
       .control-btn {
         font-size: 1.5rem;
         color: #a0a0a0;
@@ -304,7 +305,7 @@ body {
         }
       }
       .album {
-        padding: 1rem 0;
+        padding: 1rem;
         color: #fff;
         height: 100%;
         display: flex;
@@ -346,15 +347,8 @@ body {
         display: flex;
         align-items: center;
         .volume-btn {
+          width: 1rem;
           font-size: 1rem;
-          padding: 0;
-        }
-        .bar {
-          padding-right: 1.3rem;
-          .bar-bg {
-            .bar-progress {
-            }
-          }
         }
       }
     }

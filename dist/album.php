@@ -37,7 +37,7 @@ $artist = $album->getArtist();
         <li class='track-list-row'>
           <div class='left-section'>
             <div class='track-count'>
-              <i class='fas fa-play'></i>
+              <i onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' class='fas fa-play'></i>
               <span class='track-number'>
                 $i
               </span>
@@ -66,6 +66,11 @@ $artist = $album->getArtist();
       $i++;
     }
     ?>
+
+    <script>
+      let tempSongIDs = '<?php echo json_encode($songArray); ?>';
+      tempPlaylist = JSON.parse(tempSongIDs);
+    </script>
   </ul>
 </div>
 
