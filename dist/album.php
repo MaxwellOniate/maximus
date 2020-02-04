@@ -2,7 +2,7 @@
 
 $pageTitle = 'Album';
 
-require('includes/header.php');
+require('includes/includedFiles.php');
 
 if (isset($_GET['id'])) {
   $albumID = $_GET['id'];
@@ -73,7 +73,3 @@ $artist = $album->getArtist();
     </script>
   </ul>
 </div>
-
-
-
-<?php require('includes/footer.php'); ?>

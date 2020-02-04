@@ -5,11 +5,13 @@ require('includes/classes/Artist.php');
 require('includes/classes/Album.php');
 require('includes/classes/Song.php');
 
-if (!isset($_SESSION["userLoggedIn"])) {
+if (isset($_SESSION["userLoggedIn"])) {
+  $userLoggedIn = $_SESSION["userLoggedIn"];
+  echo "<script>let userLoggedIn = '$userLoggedIn'</script>";
+} else {
   header("Location: login.php");
 }
 
-$userLoggedIn = $_SESSION["userLoggedIn"];
 
 ?>
 

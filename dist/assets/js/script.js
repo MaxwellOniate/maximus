@@ -7,6 +7,20 @@ let currentIndex = 0;
 let repeat = false;
 let shuffle = false;
 
+function openPage(url) {
+  if (url.indexOf('?') == -1) {
+    url += '?';
+  }
+
+  let encodedURL = encodeURI(url + '&userLoggedIn=' + userLoggedIn);
+
+  $('#main-content').load(encodedURL);
+
+  $('body').scrollTop(0);
+
+  history.pushState(null, null, url);
+}
+
 function formatTime(seconds) {
   let time = Math.round(seconds);
   let minutes = Math.floor(time / 60);

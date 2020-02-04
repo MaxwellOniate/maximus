@@ -262,12 +262,11 @@ $jsonArray = json_encode($resultArray);
       });
 
       audioElement.setTrack(track);
-      playSong();
-    });
 
-    if (play) {
-      audioElement.play();
-    }
+      if (play) {
+        playSong();
+      }
+    });
   }
 
   function playSong() {
