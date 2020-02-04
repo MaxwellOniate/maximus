@@ -22,7 +22,7 @@ if (isset($_SESSION["userLoggedIn"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Maximus | <?php echo $pageTitle; ?></title>
+  <title>Maximus</title>
   <script src="https://kit.fontawesome.com/52d1564875.js" crossorigin="anonymous"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/popper.min.js"></script>

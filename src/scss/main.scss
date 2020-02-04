@@ -146,7 +146,7 @@ body {
       padding-bottom: 108px;
       width: calc(100% - 220px);
       #main-content {
-        padding: 1rem;
+        padding: 2rem;
         .page-heading {
           text-align: center;
           margin-bottom: 1.5rem;
@@ -178,7 +178,8 @@ body {
         }
         .entity {
           img {
-            margin: 2rem 2rem 2rem 0;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
           }
           .entity-info {
             display: inline-block;
@@ -341,6 +342,23 @@ body {
           width: 1rem;
           font-size: 1rem;
         }
+      }
+    }
+  }
+}
+
+#artist {
+  .artist-info {
+    .btn {
+      padding: 1rem;
+      border-radius: 500px;
+      text-transform: uppercase;
+      min-width: 150px;
+      transition: all 200ms linear;
+      background: $primary-color;
+      color: #fff;
+      &:hover {
+        background: #289e28;
       }
     }
   }

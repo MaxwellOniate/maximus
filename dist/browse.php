@@ -1,6 +1,6 @@
 <?php
 
-$pageTitle = 'Home';
+
 require('includes/includedFiles.php');
 
 ?>
