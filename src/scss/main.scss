@@ -10,6 +10,11 @@ body {
   letter-spacing: 1px;
 }
 
+[role='link'] {
+  cursor: pointer;
+  outline: none;
+}
+
 .form-header {
   padding: 1.5rem;
   border-bottom: 1px solid #ccc;
@@ -132,8 +137,6 @@ body {
         list-style: none;
         padding: 10px 0;
         font-weight: 700;
-        cursor: pointer;
-        outline: none;
         transition: all 200ms linear;
         &:hover {
           border-color: $primary-color;
@@ -154,25 +157,23 @@ body {
         .albums {
           display: flex;
           flex-wrap: wrap;
-          justify-content: center;
           .album {
             margin: 1rem;
             height: 200px;
             width: 200px;
-            a {
-              color: #fff;
-              text-decoration: none;
+            span {
+              transition: all 200ms linear;
               &:hover {
-                text-decoration: none;
+                color: $primary-color;
               }
-            }
-            .album-info {
-              font-weight: 300;
-              text-align: center;
-              padding: 5px 0;
-              text-overflow: ellipsis;
-              overflow: hidden;
-              white-space: nowrap;
+              .album-info {
+                font-weight: 300;
+                text-align: center;
+                padding: 5px 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+              }
             }
           }
         }
@@ -197,15 +198,17 @@ body {
               &:hover {
                 background: #282828;
                 .track-count {
-                  i {
-                    display: block;
-                  }
                   .track-number {
                     display: none;
                   }
                 }
+                .track-count i,
                 .track-options {
+                  transition: all 200ms linear;
                   display: block;
+                  &:hover {
+                    color: $primary-color;
+                  }
                 }
               }
               span {
@@ -225,7 +228,6 @@ body {
                 padding: 0.5rem;
                 i {
                   display: none;
-                  cursor: pointer;
                 }
               }
               .track-info {
@@ -239,7 +241,6 @@ body {
               }
               .track-options {
                 display: none;
-                cursor: pointer;
               }
               .track-options,
               .track-duration {
@@ -256,7 +257,7 @@ body {
     width: 100%;
     background: #282828;
     .play-bar {
-      padding: 0.5rem;
+      padding: 1rem;
       color: #a0a0a0;
       .control-btn.active {
         color: $primary-color;
@@ -297,7 +298,6 @@ body {
         }
       }
       .album {
-        padding: 1rem;
         color: #fff;
         height: 100%;
         display: flex;
@@ -318,6 +318,7 @@ body {
       .player-controls {
         padding: 0 1rem;
         .buttons {
+          padding-bottom: 0.5rem;
           display: flex;
           justify-content: center;
           .play,
@@ -334,7 +335,6 @@ body {
         }
       }
       .volume {
-        padding: 1rem;
         height: 100%;
         display: flex;
         align-items: center;
@@ -348,18 +348,24 @@ body {
 }
 
 #artist {
-  .artist-info {
-    .btn {
-      padding: 1rem;
-      border-radius: 500px;
-      text-transform: uppercase;
-      min-width: 150px;
-      transition: all 200ms linear;
-      background: $primary-color;
-      color: #fff;
-      &:hover {
-        background: #289e28;
-      }
+  h2 {
+    padding: 2rem;
+    text-transform: uppercase;
+  }
+  .btn {
+    padding: 1rem;
+    border-radius: 500px;
+    text-transform: uppercase;
+    min-width: 150px;
+    transition: all 200ms linear;
+    background: $primary-color;
+    color: #fff;
+    &:hover {
+      background: #289e28;
     }
+  }
+  .track-list-container {
+    border-top: 1px solid #a0a0a0;
+    border-bottom: 1px solid #a0a0a0;
   }
 }

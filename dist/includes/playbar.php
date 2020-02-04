@@ -21,14 +21,14 @@ $jsonArray = json_encode($resultArray);
       <div class="col-md-3">
         <div class="album">
 
-          <img src="" alt="" class="album-art img-fluid">
+          <img role="link" tabindex="0" src="" alt="" class="album-art img-fluid">
 
           <div class="track-info">
             <span class="track-name d-block">
-              <span></span>
+              <span role="link" tabindex="0"></span>
             </span>
             <span class="artist-name d-block">
-              <span></span>
+              <span role="link" tabindex="0"></span>
             </span>
           </div>
 
@@ -251,6 +251,7 @@ $jsonArray = json_encode($resultArray);
       }, function(data) {
         let artist = JSON.parse(data);
         $('.artist-name span').text(artist.name);
+        $('.artist-name span').attr('onclick', 'openPage(\'artist.php?id=' + artist.id + '\')');
       });
 
       $.post("ajax/getAlbumJSON.php", {
@@ -259,6 +260,8 @@ $jsonArray = json_encode($resultArray);
         let album = JSON.parse(data);
         $('img.album-art').attr('src', album.artworkPath);
         $('img.album-art').attr('alt', album.title);
+        $('img.album-art').attr('onclick', 'openPage(\'album.php?id=' + album.id + '\')');
+        $('.track-name span').attr('onclick', 'openPage(\'album.php?id=' + album.id + '\')');
       });
 
       audioElement.setTrack(track);

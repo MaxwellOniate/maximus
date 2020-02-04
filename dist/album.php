@@ -34,10 +34,10 @@ $artist = $album->getArtist();
       $albumArtist = $albumSong->getArtist();
 
       echo "
-        <li class='track-list-row'>
+        <li onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' role='link' tabindex='0' class='track-list-row'>
           <div class='left-section'>
             <div class='track-count'>
-              <i onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' class='fas fa-play'></i>
+              <i class='fas fa-play'></i>
               <span class='track-number'>
                 $i
               </span>

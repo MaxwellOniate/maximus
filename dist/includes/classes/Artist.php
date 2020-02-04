@@ -22,4 +22,17 @@ class Artist
 
     return $artist['name'];
   }
+  public function getSongIDs()
+  {
+    $query = $this->con->prepare('SELECT id FROM songs WHERE artist = :id ORDER BY plays DESC');
+    $query->execute([':id' => $this->id]);
+
+    $array = [];
+
+    while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+      array_push($array, $row['id']);
+    }
+
+    return $array;
+  }
 }
