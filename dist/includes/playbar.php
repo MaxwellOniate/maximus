@@ -24,12 +24,12 @@ $jsonArray = json_encode($resultArray);
           <img role="link" tabindex="0" src="" alt="" class="album-art img-fluid">
 
           <div class="track-info">
-            <span class="track-name d-block">
+            <div class="track-name d-block">
               <span role="link" tabindex="0"></span>
-            </span>
-            <span class="artist-name d-block">
+            </div>
+            <div class="artist-name d-block">
               <span role="link" tabindex="0"></span>
-            </span>
+            </div>
           </div>
 
         </div>

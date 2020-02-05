@@ -16,6 +16,24 @@
   }
 }
 
+@media (max-width: 768px) {
+  #main-view-container {
+    #main-content {
+      #search {
+        .lead {
+          font-size: 1rem;
+        }
+        .form-group {
+          .search-input {
+            padding: 2rem;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 420px) {
   .main-form {
     .container {

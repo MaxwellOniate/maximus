@@ -68,8 +68,13 @@ $artist = $album->getArtist();
     ?>
 
     <script>
-      let tempSongIDs = '<?php echo json_encode($songArray); ?>';
-      tempPlaylist = JSON.parse(tempSongIDs);
+      if (typeof tempSongIDs == undefined) {
+        let tempSongIDs = '<?php echo json_encode($songArray); ?>';
+        tempPlaylist = JSON.parse(tempSongIDs);
+      } else {
+        tempSongIDs = '<?php echo json_encode($songArray); ?>';
+        tempPlaylist = JSON.parse(tempSongIDs);
+      }
     </script>
   </ul>
 </div>

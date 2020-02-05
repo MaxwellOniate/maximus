@@ -6,6 +6,13 @@
   .main-form .container .features ul li {
     font-size: 1rem; } }
 
+@media (max-width: 768px) {
+  #main-view-container #main-content #search .lead {
+    font-size: 1rem; }
+  #main-view-container #main-content #search .form-group .search-input {
+    padding: 2rem;
+    font-size: 2rem; } }
+
 @media (max-width: 420px) {
   .main-form .container .features h1 {
     font-size: 2rem; }
@@ -35,6 +42,15 @@ body {
 [role='link'] {
   cursor: pointer;
   outline: none; }
+
+.heading-md {
+  padding: 2rem 0;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.vertical-borders {
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0; }
 
 .form-header {
   padding: 1.5rem;
@@ -285,10 +301,6 @@ body {
         width: 1rem;
         font-size: 1rem; }
 
-#artist h2 {
-  padding: 2rem;
-  text-transform: uppercase; }
-
 #artist .btn {
   padding: 1rem;
   border-radius: 500px;
@@ -300,6 +312,15 @@ body {
   #artist .btn:hover {
     background: #289e28; }
 
-#artist .track-list-container {
-  border-top: 1px solid #a0a0a0;
-  border-bottom: 1px solid #a0a0a0; }
+#search .form-group .search-input {
+  background: #242424;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 3rem;
+  font-size: 3rem; }
+
+.search-result-row {
+  padding: 1rem; }
+  .search-result-row:hover {
+    background: #282828; }

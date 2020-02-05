@@ -12,6 +12,11 @@ class Artist
     $this->id = $id;
   }
 
+  public function getID()
+  {
+    return $this->id;
+  }
+
   public function getName()
   {
     $query = $this->con->prepare('SELECT name FROM artists WHERE id = :id');

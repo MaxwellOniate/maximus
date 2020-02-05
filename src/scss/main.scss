@@ -15,6 +15,17 @@ body {
   outline: none;
 }
 
+.heading-md {
+  padding: 2rem 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.vertical-borders {
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+}
+
 .form-header {
   padding: 1.5rem;
   border-bottom: 1px solid #ccc;
@@ -348,10 +359,6 @@ body {
 }
 
 #artist {
-  h2 {
-    padding: 2rem;
-    text-transform: uppercase;
-  }
   .btn {
     padding: 1rem;
     border-radius: 500px;
@@ -364,8 +371,23 @@ body {
       background: #289e28;
     }
   }
-  .track-list-container {
-    border-top: 1px solid #a0a0a0;
-    border-bottom: 1px solid #a0a0a0;
+}
+
+#search {
+  .form-group {
+    .search-input {
+      background: #242424;
+      color: #fff;
+      border: none;
+      border-radius: 0;
+      padding: 3rem;
+      font-size: 3rem;
+    }
+  }
+}
+.search-result-row {
+  padding: 1rem;
+  &:hover {
+    background: #282828;
   }
 }

@@ -20,9 +20,9 @@ $artist = new Artist($con, $artistID);
   </div>
 
 
-  <div class="track-list-container">
+  <div class="track-list-container vertical-borders">
 
-    <h2>Popular</h2>
+    <h2 class="heading-md">Popular</h2>
 
     <ul class="track-list">
       <?php
@@ -72,13 +72,18 @@ $artist = new Artist($con, $artistID);
       ?>
 
       <script>
-        let tempSongIDs = '<?php echo json_encode($songArray); ?>';
-        tempPlaylist = JSON.parse(tempSongIDs);
+        if (typeof tempSongIDs == undefined) {
+          let tempSongIDs = '<?php echo json_encode($songArray); ?>';
+          tempPlaylist = JSON.parse(tempSongIDs);
+        } else {
+          tempSongIDs = '<?php echo json_encode($songArray); ?>';
+          tempPlaylist = JSON.parse(tempSongIDs);
+        }
       </script>
     </ul>
   </div>
 
-  <h2>Albums</h2>
+  <h2 class="heading-md">Albums</h2>
   <div class="albums">
     <?php
     $query = $con->prepare('SELECT * FROM albums WHERE artist = :id');
