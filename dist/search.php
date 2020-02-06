@@ -12,7 +12,7 @@ if (isset($_GET['term'])) {
 
 
 
-<section id="search">
+<section id="search" class="border-bottom border-light">
 
   <p class="lead">Search for an artist, album, or song.</p>
   <div class="form-group">
@@ -37,7 +37,7 @@ if (isset($_GET['term'])) {
 
 <?php if ($term == "") exit(); ?>
 
-<div class="track-list-container vertical-borders">
+<div class="track-list-container border-bottom border-light">
 
   <h2 class="heading-md">Songs</h2>
 
@@ -47,7 +47,7 @@ if (isset($_GET['term'])) {
     $query->execute([':term' => $term]);
 
     if ($query->rowCount() == 0) {
-      echo "<span class='noResults'>No songs found matching \"$term\"</span>";
+      echo "<p class='noResults'>No songs found matching \"$term\"</p>";
     }
 
     $songArray = [];
@@ -109,7 +109,7 @@ if (isset($_GET['term'])) {
   </ul>
 </div>
 
-<div class="artists-container">
+<div class="artists-container border-bottom border-light">
   <h2 class="heading-md">Artists</h2>
   <?php
 
@@ -117,7 +117,7 @@ if (isset($_GET['term'])) {
   $query->execute([':term' => $term]);
 
   if ($query->rowCount() == 0) {
-    echo "<span class='noResults'>No artists found matching \"$term\"</span>";
+    echo "<p class='noResults'>No artists found matching \"$term\"</p>";
   }
 
   while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -135,33 +135,34 @@ if (isset($_GET['term'])) {
   ?>
 </div>
 
-<div class="vertical-borders">
-  <h2 class="heading-md">Albums</h2>
-  <div class="albums pb-5">
-    <?php
-    $query = $con->prepare("SELECT * FROM albums WHERE title LIKE CONCAT('%', :term, '%') LIMIT 10");
-    $query->execute([':term' => $term]);
+<h2 class="heading-md">Albums</h2>
+<div class="albums">
+  <?php
+  $query = $con->prepare("SELECT * FROM albums WHERE title LIKE CONCAT('%', :term, '%') LIMIT 10");
+  $query->execute([':term' => $term]);
+
+  while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    echo "
+  
+        <div class='album'>
+          <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
+            <img src='" . $row['artworkPath'] . " ' alt='" . $row['title'] . "' class='img-fluid'>
+  
+            <div class='album-info'>" . $row['title'] . "</div>
+          </span>
+  
+        </div>
+      
+      ";
+  }
+
+  ?>
+
+</div>
 
 
-    if ($query->rowCount() == 0) {
-      echo "<span class='noResults'>No albums found matching \"$term\"</span>";
-    }
-
-    while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-      echo "
-
-      <div class='album'>
-        <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
-          <img src='" . $row['artworkPath'] . " ' alt='" . $row['title'] . "' class='img-fluid'>
-
-          <div class='album-info'>" . $row['title'] . "</div>
-        </span>
-
-      </div>
-    
-    ";
-    }
-
-    ?>
-
-  </div>
+<?php
+if ($query->rowCount() == 0) {
+  echo "<p class='noResults'>No albums found matching \"$term\"</p>";
+}
+?>

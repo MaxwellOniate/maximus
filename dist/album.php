@@ -19,7 +19,7 @@ $artist = $album->getArtist();
   <img src="<?php echo $album->getArtworkPath(); ?>" alt="<?php echo $album->getTitle(); ?>" class="img-fluid">
   <div class="entity-info">
     <h2><?php echo $album->getTitle(); ?></h2>
-    <p>By <?php echo $artist->getName(); ?></p>
+    <p role="link" tabindex="0" onclick="openPage('artist.php?id=<?php echo $artist->getID(); ?>')">By <span><?php echo $artist->getName(); ?></span></p>
     <p><?php echo $album->getNumberOfSongs(); ?> Songs</p>
   </div>
 </div>
@@ -66,6 +66,8 @@ $artist = $album->getArtist();
       $i++;
     }
     ?>
+
+
 
     <script>
       if (typeof tempSongIDs == undefined) {

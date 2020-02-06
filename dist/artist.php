@@ -14,13 +14,13 @@ $artist = new Artist($con, $artistID);
 
 <section id="artist">
 
-  <div class="text-center pb-3">
+  <header class="heading-btn">
     <h1><?php echo $artist->getName(); ?></h1>
-    <button onclick="playFirstSong()" class="btn my-3">Play</button>
-  </div>
+    <button onclick="playFirstSong()" class="btn btn-main">Play</button>
+  </header>
 
 
-  <div class="track-list-container vertical-borders">
+  <div class="track-list-container border-bottom border-light">
 
     <h2 class="heading-md">Popular</h2>
 
