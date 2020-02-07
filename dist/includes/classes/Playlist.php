@@ -58,4 +58,29 @@ class Playlist
 
     return $array;
   }
+  public static function getPlaylistsList($con, $username)
+  {
+    $playlistList = "
+      <form action='' method='post'>";
+
+    $query = $con->prepare("SELECT id, name FROM playlists WHERE owner = :username");
+    $query->execute([':username' => $username]);
+    while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+      $id = $row['id'];
+      $name = $row['name'];
+
+      $playlistList = $playlistList . "
+      <div class='form-check'>
+        <input class='form-check-input' type='checkbox' value='$id' id='$id'>
+        <span class='checkbox-custom'></span>
+        <label class='form-check-label' for='$id'>
+          $name
+        </label>
+      </div>
+      ";
+    }
+
+
+    return $playlistList . "</form>";
+  }
 }

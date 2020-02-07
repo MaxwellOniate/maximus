@@ -65,10 +65,10 @@ if (isset($_GET['term'])) {
       $albumArtist = $albumSong->getArtist();
 
       echo "
-    <li onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' class='track-list-row' role='link' tabindex='0'>
+    <li class='track-list-row'>
       <div class='left-section'>
         <div class='track-count'>
-          <i class='fas fa-play'></i>
+          <i role='link' tabindex='0' onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' class='fas fa-play'></i>
           <span class='track-number'>
             $i
           </span>
@@ -84,9 +84,21 @@ if (isset($_GET['term'])) {
       </div>
 
       <div class='right-section'>
-        <div class='track-options'>
-          <i class='fas fa-ellipsis-h'></i>
+
+        <div class='track-options'>     
+          <div class='dropdown'>
+
+            <span role='link' tabindex='0' id='dropdownMenuButton' data-toggle='dropdown'>
+              <i class='fas fa-ellipsis-h'></i>
+            </span>
+
+            <div class='dropdown-menu'>
+              <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal'>Add to Playlist</a>
+            </div>
+
+          </div>
         </div>
+
         <div class='track-duration'>
           <span class='duration'>" . $albumSong->getDuration() . "</span>
         </div>
@@ -96,6 +108,22 @@ if (isset($_GET['term'])) {
       $i++;
     }
     ?>
+
+    <div class="modal fade" id="playlists-modal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Add to...</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <?php echo Playlist::getPlaylistsList($con, $userLoggedIn->getUsername()); ?>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       if (typeof tempSongIDs == undefined) {

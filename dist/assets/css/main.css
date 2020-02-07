@@ -257,9 +257,26 @@ body {
               display: block; }
           #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options {
             display: none; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options .dropdown #dropdownMenuButton {
+              color: #fff; }
+            #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options .dropdown .dropdown-menu {
+              background: #282828;
+              border: 1px solid #000; }
+              #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options .dropdown .dropdown-menu:hover {
+                background: #333; }
+                #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options .dropdown .dropdown-menu:hover a {
+                  color: #fff; }
+              #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options .dropdown .dropdown-menu .dropdown-item {
+                color: #939393; }
+                #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options .dropdown .dropdown-menu .dropdown-item:hover, #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options .dropdown .dropdown-menu .dropdown-item:focus {
+                  background: none; }
           #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-options,
           #main .top-container #main-view-container #main-content .track-list-container .track-list .track-list-row .track-duration {
             margin: 0 2rem; }
+        #main .top-container #main-view-container #main-content .track-list-container .track-list .modal {
+          color: #000; }
+          #main .top-container #main-view-container #main-content .track-list-container .track-list .modal .modal-title {
+            font-size: 16px; }
 
 #main #play-bar-container {
   width: 100%;

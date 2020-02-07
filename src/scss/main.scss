@@ -292,10 +292,38 @@ body {
               }
               .track-options {
                 display: none;
+                .dropdown {
+                  #dropdownMenuButton {
+                    color: #fff;
+                  }
+                  .dropdown-menu {
+                    background: #282828;
+                    border: 1px solid #000;
+                    &:hover {
+                      background: #333;
+                      a {
+                        color: #fff;
+                      }
+                    }
+                    .dropdown-item {
+                      color: #939393;
+                      &:hover,
+                      &:focus {
+                        background: none;
+                      }
+                    }
+                  }
+                }
               }
               .track-options,
               .track-duration {
                 margin: 0 2rem;
+              }
+            }
+            .modal {
+              color: #000;
+              .modal-title {
+                font-size: 16px;
               }
             }
           }
