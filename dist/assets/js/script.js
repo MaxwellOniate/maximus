@@ -8,6 +8,15 @@ let repeat = false;
 let shuffle = false;
 let timer;
 
+$(document).on('change', '.form-check-input', function() {
+  let playlistID = $(this).val();
+  let songID = $(this)
+    .parents('.modal-body')
+    .prev('.songID')
+    .val();
+  console.log(songID);
+});
+
 function openPage(url) {
   if (timer != null) {
     clearTimeout(timer);

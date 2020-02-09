@@ -71,9 +71,8 @@ class Playlist
 
       $playlistList = $playlistList . "
       <div class='form-check'>
-        <input class='form-check-input' type='checkbox' value='$id' id='$id'>
-        <span class='checkbox-custom'></span>
-        <label class='form-check-label' for='$id'>
+        <input class='form-check-input' type='checkbox' value='$id'>
+        <label class='form-check-label'>
           $name
         </label>
       </div>

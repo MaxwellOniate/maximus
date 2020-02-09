@@ -54,7 +54,7 @@ $artist = $album->getArtist();
 
           <div class='right-section'>
             <div class='track-options'>  
-              <input type='hidden' class='songID' value='" . $albumSong->getID() . "'> 
+             
               <div class='dropdown'>
 
                 <span role='link' tabindex='0' id='dropdownMenuButton' data-toggle='dropdown'>
@@ -62,11 +62,28 @@ $artist = $album->getArtist();
                 </span>
 
                 <div class='dropdown-menu'>
-                  <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal'>Add to Playlist</a>
+                  <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal-" . $albumSong->getID() . "'>Add to Playlist</a>
                 </div>
 
               </div>
             </div>
+
+            <div class='modal fade' id='playlists-modal-" . $albumSong->getID() . "' role='dialog'>
+            <div class='modal-dialog' role='document'>
+              <div class='modal-content'>
+                <div class='modal-header'>
+                  <h3 class='modal-title'>Add to...</h3>
+                  <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                    <span aria-hidden='true'>×</span>
+                  </button>
+                </div>
+                <input type='hidden' class='songID' value='" . $albumSong->getID() . "'>
+                <div class='modal-body'>
+                  " . Playlist::getPlaylistsList($con, $userLoggedIn->getUsername()) . "
+                </div>
+              </div>
+            </div>
+          </div>
 
             <div class='track-duration'>
               <span class='duration'>" . $albumSong->getDuration() . "</span>
@@ -79,21 +96,7 @@ $artist = $album->getArtist();
     }
     ?>
 
-    <div class="modal fade" id="playlists-modal" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title">Add to...</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <?php echo Playlist::getPlaylistsList($con, $userLoggedIn->getUsername()); ?>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
 
 
