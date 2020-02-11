@@ -90,6 +90,8 @@ class Playlist
 
     if ($query->rowCount() != 0) {
       return 'checked';
+    } else {
+      return '';
     }
   }
 }

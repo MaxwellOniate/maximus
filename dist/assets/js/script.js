@@ -15,10 +15,18 @@ $(document).on('change', '.form-check-input', function() {
     .prev('.songID')
     .val();
 
-  $.post('ajax/addToPlaylist.php', {
-    playlistID: playlistID,
-    songID: songID
-  }).done();
+  if ($(this)[0].checked == false) {
+    $.post('ajax/removeFromPlaylist.php', {
+      playlistID: playlistID,
+      songID: songID
+    }).done();
+    console.log('Hello?');
+  } else {
+    $.post('ajax/addToPlaylist.php', {
+      playlistID: playlistID,
+      songID: songID
+    }).done();
+  }
 });
 
 function removeFromPlaylist(playlistID, songID) {
