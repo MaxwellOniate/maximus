@@ -21,12 +21,7 @@ $(document).on('change', '.form-check-input', function() {
   }).done();
 });
 
-function removeFromPlaylist(button, playlistID) {
-  let songID = $(this)
-    .parents('.modal-body')
-    .prev('.songID')
-    .val();
-
+function removeFromPlaylist(playlistID, songID) {
   $.post('ajax/removeFromPlaylist.php', {
     playlistID: playlistID,
     songID: songID

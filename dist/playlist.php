@@ -64,7 +64,7 @@ $owner = new User($con, $playlist->getOwner());
   
                 <div class='dropdown-menu dropdown-menu-right'>
                   <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal-" . $playlistSong->getID() . "'>Add to Playlist</a>
-                  <a role='link' tabindex='0'  class='dropdown-item'>Remove From Playlist</a>
+                  <a onclick='removeFromPlaylist(" . $playlist->getID() . ", " .  $playlistSong->getID() . ")' role='link' tabindex='0'  class='dropdown-item'>Remove From Playlist</a>
                 </div>
   
               </div>
