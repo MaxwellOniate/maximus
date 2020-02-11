@@ -58,10 +58,9 @@ class Playlist
 
     return $array;
   }
-  public static function getPlaylistsList($con, $username)
+  public static function getPlaylistsList($con, $username, $songID)
   {
-    $playlistList = "
-      <form action='' method='post'>";
+    $playlistList = "<div>";
 
     $query = $con->prepare("SELECT id, name FROM playlists WHERE owner = :username");
     $query->execute([':username' => $username]);
@@ -71,7 +70,8 @@ class Playlist
 
       $playlistList = $playlistList . "
       <div class='form-check'>
-        <input class='form-check-input' type='checkbox' value='$id'>
+        <input class='form-check-input' type='checkbox' value='$id'
+        " . Playlist::alreadyInPlaylist($con, $songID, $id) . ">
         <label class='form-check-label'>
           $name
         </label>
@@ -80,6 +80,16 @@ class Playlist
     }
 
 
-    return $playlistList . "</form>";
+    return $playlistList . "</div>";
+  }
+
+  public static function alreadyInPlaylist($con, $songID, $playlistID)
+  {
+    $query = $con->prepare("SELECT * FROM playlist_songs WHERE songID = :songID AND playlistID = :playlistID");
+    $query->execute([':songID' => $songID, ':playlistID' => $playlistID]);
+
+    if ($query->rowCount() != 0) {
+      return 'checked';
+    }
   }
 }

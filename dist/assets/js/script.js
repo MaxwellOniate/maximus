@@ -14,8 +14,26 @@ $(document).on('change', '.form-check-input', function() {
     .parents('.modal-body')
     .prev('.songID')
     .val();
-  console.log(songID);
+
+  $.post('ajax/addToPlaylist.php', {
+    playlistID: playlistID,
+    songID: songID
+  }).done();
 });
+
+function removeFromPlaylist(button, playlistID) {
+  let songID = $(this)
+    .parents('.modal-body')
+    .prev('.songID')
+    .val();
+
+  $.post('ajax/removeFromPlaylist.php', {
+    playlistID: playlistID,
+    songID: songID
+  }).done(function() {
+    openPage('playlist.php?id=' + playlistID);
+  });
+}
 
 function openPage(url) {
   if (timer != null) {

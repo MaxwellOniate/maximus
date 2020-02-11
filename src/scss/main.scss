@@ -299,17 +299,12 @@ body {
                   .dropdown-menu {
                     background: #282828;
                     border: 1px solid #000;
-                    &:hover {
-                      background: #333;
-                      a {
-                        color: #fff;
-                      }
-                    }
                     .dropdown-item {
                       color: #939393;
                       &:hover,
                       &:focus {
-                        background: none;
+                        background: #333;
+                        color: #fff;
                       }
                     }
                   }

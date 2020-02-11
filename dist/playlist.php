@@ -35,33 +35,66 @@ $owner = new User($con, $playlist->getOwner());
           $songArtist = $playlistSong->getArtist();
 
           echo "
-            <li onclick='setTrack(\"" . $playlistSong->getID() . "\", tempPlaylist, true)' role='link' tabindex='0' class='track-list-row'>
-              <div class='left-section'>
-                <div class='track-count'>
-                  <i class='fas fa-play'></i>
-                  <span class='track-number'>
-                    $i
-                  </span>
-                </div>
-                <div class='track-info'>
-                  <span class='track-name'>"
+          <li class='track-list-row'>
+          <div class='left-section'>
+            <div class='track-count'>
+              <i role='link' tabindex='0' onclick='setTrack(\"" . $playlistSong->getID() . "\", tempPlaylist, true)' class='fas fa-play'></i>
+              <span class='track-number'>
+                $i
+              </span>
+            </div>
+            <div class='track-info'>
+              <span class='track-name'>"
             . $playlistSong->getTitle() .
             "</span>
-                  <span class='artist-name'>"
+              <span class='artist-name'>"
             . $songArtist->getName() .
             "</span>
-                </div>
-              </div>
-    
-              <div class='right-section'>
-                <div class='track-options'>
+            </div>
+          </div>
+  
+          <div class='right-section'>
+            <div class='track-options'>  
+            
+              <div class='dropdown'>
+  
+                <span role='link' tabindex='0' id='dropdownMenuButton' data-toggle='dropdown'>
                   <i class='fas fa-ellipsis-h'></i>
+                </span>
+  
+                <div class='dropdown-menu dropdown-menu-right'>
+                  <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal-" . $playlistSong->getID() . "'>Add to Playlist</a>
+                  <a role='link' tabindex='0'  class='dropdown-item'>Remove From Playlist</a>
                 </div>
-                <div class='track-duration'>
-                  <span class='duration'>" . $playlistSong->getDuration() . "</span>
+  
+              </div>
+  
+            </div>
+  
+            <div class='modal fade' id='playlists-modal-" . $playlistSong->getID() . "' role='dialog'>
+              <div class='modal-dialog' role='document'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <h3 class='modal-title'>Add to...</h3>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                      <span aria-hidden='true'>×</span>
+                    </button>
+                  </div>
+                  <input type='hidden' class='songID' value='" . $playlistSong->getID() . "'>
+                  <div class='modal-body'>
+                    " . Playlist::getPlaylistsList($con, $userLoggedIn->getUsername(), $playlistSong->getID()) . "
+                  </div>
                 </div>
               </div>
-            </li>
+            </div>
+            
+        
+  
+            <div class='track-duration'>
+              <span class='duration'>" . $playlistSong->getDuration() . "</span>
+            </div>
+          </div>
+        </li>
           ";
 
           $i++;

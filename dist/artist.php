@@ -38,7 +38,7 @@ $artist = new Artist($con, $artistID);
         $albumArtist = $albumSong->getArtist();
 
         echo "
-        <li class='track-list-row' >
+        <li class='track-list-row'>
           <div class='left-section'>
             <div class='track-count'>
               <i role='link' tabindex='0' onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' class='fas fa-play'></i>
@@ -57,20 +57,40 @@ $artist = new Artist($con, $artistID);
           </div>
 
           <div class='right-section'>
-
-            <div class='track-options'>     
+            <div class='track-options'>  
+             
               <div class='dropdown'>
 
                 <span role='link' tabindex='0' id='dropdownMenuButton' data-toggle='dropdown'>
                   <i class='fas fa-ellipsis-h'></i>
                 </span>
 
-                <div class='dropdown-menu'>
-                  <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal'>Add to Playlist</a>
+                <div class='dropdown-menu dropdown-menu-right'>
+                  <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal-" . $albumSong->getID() . "'>Add to Playlist</a>
                 </div>
 
               </div>
+
             </div>
+
+            <div class='modal fade' id='playlists-modal-" . $albumSong->getID() . "' role='dialog'>
+              <div class='modal-dialog' role='document'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <h3 class='modal-title'>Add to...</h3>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                      <span aria-hidden='true'>×</span>
+                    </button>
+                  </div>
+                  <input type='hidden' class='songID' value='" . $albumSong->getID() . "'>
+                  <div class='modal-body'>
+                    " . Playlist::getPlaylistsList($con, $userLoggedIn->getUsername(), $albumSong->getID()) . "
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+         
 
             <div class='track-duration'>
               <span class='duration'>" . $albumSong->getDuration() . "</span>
@@ -82,22 +102,6 @@ $artist = new Artist($con, $artistID);
         $i++;
       }
       ?>
-
-      <div class="modal fade" id="playlists-modal" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title">Add to...</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <?php echo Playlist::getPlaylistsList($con, $userLoggedIn->getUsername()); ?>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <script>
         if (typeof tempSongIDs == undefined) {

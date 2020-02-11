@@ -34,41 +34,42 @@ $artist = $album->getArtist();
       $albumArtist = $albumSong->getArtist();
 
       echo "
-        <li class='track-list-row'>
-          <div class='left-section'>
-            <div class='track-count'>
-              <i role='link' tabindex='0' onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' class='fas fa-play'></i>
-              <span class='track-number'>
-                $i
-              </span>
-            </div>
-            <div class='track-info'>
-              <span class='track-name'>"
+      <li class='track-list-row'>
+        <div class='left-section'>
+          <div class='track-count'>
+            <i role='link' tabindex='0' onclick='setTrack(\"" . $albumSong->getID() . "\", tempPlaylist, true)' class='fas fa-play'></i>
+            <span class='track-number'>
+              $i
+            </span>
+          </div>
+          <div class='track-info'>
+            <span class='track-name'>"
         . $albumSong->getTitle() .
         "</span>
-              <span class='artist-name'>"
+            <span class='artist-name'>"
         . $albumArtist->getName() .
         "</span>
+          </div>
+        </div>
+
+        <div class='right-section'>
+          <div class='track-options'>  
+          
+            <div class='dropdown'>
+
+              <span role='link' tabindex='0' id='dropdownMenuButton' data-toggle='dropdown'>
+                <i class='fas fa-ellipsis-h'></i>
+              </span>
+
+              <div class='dropdown-menu dropdown-menu-right'>
+                <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal-" . $albumSong->getID() . "'>Add to Playlist</a>
+              </div>
+
             </div>
+
           </div>
 
-          <div class='right-section'>
-            <div class='track-options'>  
-             
-              <div class='dropdown'>
-
-                <span role='link' tabindex='0' id='dropdownMenuButton' data-toggle='dropdown'>
-                  <i class='fas fa-ellipsis-h'></i>
-                </span>
-
-                <div class='dropdown-menu'>
-                  <a role='link' tabindex='0'  class='dropdown-item' data-toggle='modal' data-target='#playlists-modal-" . $albumSong->getID() . "'>Add to Playlist</a>
-                </div>
-
-              </div>
-            </div>
-
-            <div class='modal fade' id='playlists-modal-" . $albumSong->getID() . "' role='dialog'>
+          <div class='modal fade' id='playlists-modal-" . $albumSong->getID() . "' role='dialog'>
             <div class='modal-dialog' role='document'>
               <div class='modal-content'>
                 <div class='modal-header'>
@@ -79,17 +80,19 @@ $artist = $album->getArtist();
                 </div>
                 <input type='hidden' class='songID' value='" . $albumSong->getID() . "'>
                 <div class='modal-body'>
-                  " . Playlist::getPlaylistsList($con, $userLoggedIn->getUsername()) . "
+                  " . Playlist::getPlaylistsList($con, $userLoggedIn->getUsername(), $albumSong->getID()) . "
                 </div>
               </div>
             </div>
           </div>
+          
+      
 
-            <div class='track-duration'>
-              <span class='duration'>" . $albumSong->getDuration() . "</span>
-            </div>
+          <div class='track-duration'>
+            <span class='duration'>" . $albumSong->getDuration() . "</span>
           </div>
-        </li>
+        </div>
+      </li>
       ";
 
       $i++;
