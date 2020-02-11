@@ -19,8 +19,9 @@ $(document).on('change', '.form-check-input', function() {
     $.post('ajax/removeFromPlaylist.php', {
       playlistID: playlistID,
       songID: songID
-    }).done();
-    console.log('Hello?');
+    }).done(function() {
+      location.reload();
+    });
   } else {
     $.post('ajax/addToPlaylist.php', {
       playlistID: playlistID,
