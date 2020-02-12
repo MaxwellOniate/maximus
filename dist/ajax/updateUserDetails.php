@@ -5,27 +5,26 @@ require('../includes/classes/Account.php');
 require('../includes/classes/FormSanitizer.php');
 require('../includes/classes/Constants.php');
 
-if (isset($_POST["username"])) {
-  $account = new Account($con);
 
-  $username = $_POST['username'];
-  $firstName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
-  $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
-  $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+$account = new Account($con);
 
-  if ($account->updateDetails($firstName, $lastName, $email, $username)) {
-    echo "
+$username = $_POST['username'];
+$firstName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
+$lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
+$email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+
+if ($account->updateDetails($firstName, $lastName, $email, $username)) {
+  echo "
     <div class='alert alert-success' role='alert'>
       Account details updated.
     </div>
     ";
-  } else {
-    $errorMessage = $account->getFirstError();
+} else {
+  $errorMessage = $account->getFirstError();
 
-    echo "
+  echo "
     <div class='alert alert-danger' role='alert'>
       $errorMessage
     </div>
     ";
-  }
 }
