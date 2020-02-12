@@ -304,14 +304,12 @@ body {
       cursor: pointer; }
       #main #play-bar-container .play-bar .bar .bar-bg {
         background: #404040;
-        height: 4px;
-        width: 100%;
-        border-radius: 2px; }
+        height: 1rem;
+        width: 100%; }
         #main #play-bar-container .play-bar .bar .bar-bg .bar-progress {
           background: #a0a0a0;
           width: 0;
-          height: 4px;
-          border-radius: 2px; }
+          height: 1rem; }
     #main #play-bar-container .play-bar .album {
       color: #fff;
       height: 100%;
@@ -398,16 +396,16 @@ body {
   -webkit-animation-name: autofill;
   -webkit-animation-fill-mode: both; }
 
-#user-details .container form {
-  padding: 1.5rem 0; }
-  #user-details .container form .form-group .message {
+#user-details .container .form {
+  padding: 1rem 0; }
+  #user-details .container .form .form-group .message {
     color: #07d159;
     font-weight: 300px; }
-  #user-details .container form .form-group .form-control {
+  #user-details .container .form .form-group .form-control {
     color: #fff;
     background: #282828;
     border: none;
     border-radius: 0;
     padding: 1.5rem; }
-  #user-details .container form .btn {
+  #user-details .container .form .btn {
     padding: 0.5rem; }
