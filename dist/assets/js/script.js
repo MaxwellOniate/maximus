@@ -30,6 +30,30 @@ $(document).on('change', '.form-check-input', function() {
   }
 });
 
+function updateUserDetails(firstName, lastName, email) {
+  $.post('ajax/updateUserDetails.php', {
+    firstName: $(firstName).val(),
+    lastName: $(lastName).val(),
+    email: $(email).val(),
+    username: userLoggedIn
+  }).done(function(response) {
+    $('.user-details-message').html(response);
+
+    setTimeout(function() {
+      $('.user-details-message').html('');
+    }, 3000);
+  });
+}
+
+function updatePassword(oldPassword, password, password2) {
+  $.post('ajax/updatePassword.php', {
+    oldPassword: $(oldPassword).val(),
+    password: $(password).val(),
+    password2: $(password2).val(),
+    username: userLoggedIn
+  }).done();
+}
+
 function removeFromPlaylist(playlistID, songID) {
   $.post('ajax/removeFromPlaylist.php', {
     playlistID: playlistID,
