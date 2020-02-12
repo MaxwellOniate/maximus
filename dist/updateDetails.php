@@ -24,13 +24,15 @@ require('includes/includedFiles.php');
         <input type="email" name="email" class="email form-control" value="<?php echo $userLoggedIn->getEmail(); ?>" placeholder="Email">
       </div>
       <div class="form-group">
-        <button onclick="updateUserDetails('.firstName', '.lastName', '.email')" name="saveDetailsBtn" class="btn btn-main btn-alt">Save</button>
+        <button onclick="updateUserDetails('.firstName', '.lastName', '.email')" class="btn btn-main btn-alt">Save</button>
       </div>
 
     </div>
 
     <div class="form">
       <h1>Change Password</h1>
+
+      <span class="password-message"></span>
 
       <div class="form-group">
         <input type="password" name="oldPassword" class="oldPassword form-control" placeholder="Current Password">
@@ -42,7 +44,7 @@ require('includes/includedFiles.php');
         <input type="password" name="password2" class="password2 form-control" placeholder="Confirm New Password">
       </div>
       <div class="form-group">
-        <button onclick="updatePassword('.oldPassword', '.password', '.password2')" name="savePasswordBtn" class="btn btn-main btn-alt">Save</button>
+        <button onclick="updatePassword('.oldPassword', '.password', '.password2')" class="btn btn-main btn-alt">Save</button>
       </div>
     </div>
 

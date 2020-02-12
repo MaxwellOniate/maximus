@@ -30,6 +30,22 @@ class Account
     return false;
   }
 
+  public function updatePassword($old, $new, $new2, $un)
+  {
+    $this->validateOldPassword($old, $un);
+    $this->validatePasswords($new, $new2);
+
+    if (empty($this->errorArray)) {
+      $query = $this->con->prepare("UPDATE users SET password = :new WHERE username = :un");
+
+      $new = hash("sha512", $new);
+
+      return $query->execute([':new' => $new, ':un' => $un]);
+    }
+
+    return false;
+  }
+
   public function login($un, $pw)
   {
     $pw = hash('sha512', $pw);
@@ -178,6 +194,18 @@ class Account
 
     if ($query->rowCount() != 0) {
       array_push($this->errorArray, Constants::$emailTaken);
+    }
+  }
+
+  private function validateOldPassword($old, $un)
+  {
+    $pw = hash("sha512", $old);
+
+    $query = $this->con->prepare("SELECT * FROM users WHERE username = :un AND password = :pw");
+    $query->execute([':un' => $un, ':pw' => $pw]);
+
+    if ($query->rowCount() == 0) {
+      array_push($this->errorArray, Constants::$passwordIncorrect);
     }
   }
 }

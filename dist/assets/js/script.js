@@ -38,10 +38,6 @@ function updateUserDetails(firstName, lastName, email) {
     username: userLoggedIn
   }).done(function(response) {
     $('.user-details-message').html(response);
-
-    setTimeout(function() {
-      $('.user-details-message').html('');
-    }, 3000);
   });
 }
 
@@ -51,7 +47,13 @@ function updatePassword(oldPassword, password, password2) {
     password: $(password).val(),
     password2: $(password2).val(),
     username: userLoggedIn
-  }).done();
+  }).done(function(response) {
+    $('.password-message').html(response);
+
+    $(oldPassword).val('');
+    $(password).val('');
+    $(password2).val('');
+  });
 }
 
 function removeFromPlaylist(playlistID, songID) {
