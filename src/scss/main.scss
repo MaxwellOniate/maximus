@@ -169,6 +169,7 @@ body {
     color: #fff;
     font-size: 1.5rem;
     padding: 2rem 0;
+    text-transform: uppercase;
     i {
       color: $primary-color;
     }
@@ -484,24 +485,23 @@ body {
 }
 
 #user-details {
-  // Keep the same background color on autofill.
-  @-webkit-keyframes autofill {
-    0%,
-    100% {
-      color: #fff;
-      background: #282828;
-    }
-  }
-  input:-webkit-autofill {
-    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
-    -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both;
-  }
-
   .container {
     .form {
       padding: 1rem 0;
       .form-group {
+        // Keep the same background color on autofill.
+        @-webkit-keyframes user-details-autofill {
+          0%,
+          100% {
+            color: #fff;
+            background: #282828;
+          }
+        }
+        input:-webkit-autofill {
+          -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+          -webkit-animation-name: user-details-autofill;
+          -webkit-animation-fill-mode: both;
+        }
         .message {
           color: $primary-color;
           font-weight: 300px;

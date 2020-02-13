@@ -132,4 +132,16 @@
       }
     }
   }
+  .top-container {
+    #main-view-container {
+      #main-content {
+        .albums {
+          .album {
+            height: 100px;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
 }
