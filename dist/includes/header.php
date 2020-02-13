@@ -40,7 +40,7 @@ if (isset($_SESSION["userLoggedIn"])) {
 
     <div class="top-container">
 
-      <?php include("includes/sideNav.php"); ?>
+      <?php include("includes/navbar.php"); ?>
 
       <div id="main-view-container">
         <div id="main-content">

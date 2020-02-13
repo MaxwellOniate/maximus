@@ -18,7 +18,7 @@ $jsonArray = json_encode($resultArray);
   <div class="play-bar">
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-5 col-sm-4 col-md-3">
         <div class="album">
 
           <img role="link" tabindex="0" src="" alt="" class="album-art img-fluid">
@@ -35,7 +35,7 @@ $jsonArray = json_encode($resultArray);
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-7 col-sm-8 col-md-6">
         <div class="player-controls">
 
           <div class="buttons">
@@ -81,7 +81,7 @@ $jsonArray = json_encode($resultArray);
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="d-none d-md-block col-md-3">
         <div class="volume">
 
           <button onclick="setMute()" class="control-btn volume-btn" title="Volume">

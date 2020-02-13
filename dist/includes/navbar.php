@@ -13,3 +13,12 @@
   </ul>
 
 </nav>
+
+<nav id="mobile-navbar" class="nav navbar-expand navbar-dark bg-dark fixed-top">
+  <ul class="navbar-nav">
+    <li role="link" tabindex="0" onclick="openPage('browse.php')" class="nav-link">Browse</li>
+    <li role="link" tabindex="0" onclick="openPage('search.php')" class="nav-link">Search</li>
+    <li role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="nav-link">Your Music</li>
+    <li role="link" tabindex="0" onclick="openPage('profile.php')" class="nav-link">Profile</li>
+  </ul>
+</nav>
