@@ -6,7 +6,7 @@ require('includes/includedFiles.php');
 ?>
 
 
-<h1 class="page-heading">You Might Also Like</h1>
+<h1 class="page-heading">Featured</h1>
 
 <div class="albums">
 
