@@ -28,6 +28,7 @@ if (isset($_SESSION["userLoggedIn"])) {
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/script.js"></script>
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
