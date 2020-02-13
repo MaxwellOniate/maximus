@@ -46,6 +46,9 @@ if (isset($_POST['submit'])) {
         <div class="col-md-5 py-5">
           <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 
+            <p>Username is "username"<br>Password is "password"</p>
+
+
             <?php echo $account->getError(Constants::$loginFailed); ?>
             <div class="form-group">
               <input type="text" name="username" class="form-control" placeholder="Username" value="<?php $account->getInputValue('username'); ?>" required>
